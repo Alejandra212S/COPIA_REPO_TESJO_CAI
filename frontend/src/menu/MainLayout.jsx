@@ -37,7 +37,7 @@ const MainLayout = () => {
     };
 
     return (
-        <div style={{
+        <div className="dashboard-header-bar" style={{
             display: 'flex', flexDirection: 'column', minHeight: '335mm',
             fontFamily: Typography.principal, backgroundColor: Colors.fondoGris,
             position: 'relative'
@@ -70,11 +70,11 @@ const MainLayout = () => {
                 position: 'relative', zIndex: 1000
             }}>
                 {/* Agregamos la clase 'titulo-layout-oficial' */}
-                <h1 className="titulo-layout-oficial" style={{ fontSize: '1.2rem', fontWeight: 'bold', margin: 0, textAlign: 'center', textTransform: 'uppercase', letterSpacing: '1px' }}>
+                <h1 className="titulo-layout-oficial dashboard-header-title" style={{ fontSize: '1.2rem', fontWeight: 'bold', margin: 0, textAlign: 'center', textTransform: 'uppercase', letterSpacing: '1px' }}>
                     Tecnológico de Estudios Superiores de Jocotitlán
                 </h1>
 
-                <div style={{ position: 'absolute', right: '40px', display: 'flex', alignItems: 'center', gap: '15px' }}>
+                <div className="dashboard-header-actions" style={{ position: 'absolute', right: '40px', display: 'flex', alignItems: 'center', gap: '15px' }}>
                     {esVistaDeTabla && (
                         <div
                             style={{ position: 'relative' }}
@@ -136,14 +136,14 @@ const MainLayout = () => {
                 </div>
             </div>
 
-            <main style={{ flexGrow: 1, padding: '40px 20px', display: 'flex', justifyContent: 'center' }}>
+            <main className="dashboard-main" style={{ flexGrow: 1, padding: '40px 20px', display: 'flex', justifyContent: 'center' }}>
                 <div style={{ width: '100%', maxWidth: '1100px' }}>
                     <Outlet />
                 </div>
             </main>
 
             {mostrarNavegacionFija && (
-                <div style={fixedNavContainerStyle}>
+                <div className="fixed-navigation" style={fixedNavContainerStyle}>
                     <button onClick={() => navigate(-1)} style={navButtonStyle} title="Regresar">
                         <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />

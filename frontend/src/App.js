@@ -11,6 +11,7 @@ import {
 import { AuthProvider } from './context/AuthContext';
 import { Colors, Typography } from './components/generalStyle/StylesConfig';
 import './components/generalStyle/LayoutStyles.css';
+import './components/generalStyle/Responsive.css';
 
 // --- IMPORTACIONES DE COMPONENTES GENERALES ---
 import LoginForm from './components/LoginForm';
@@ -53,7 +54,7 @@ const DashboardHome = () => {
   ];
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '100%', gap: '12px', padding: '40px 0', fontFamily: Typography.principal }}>
+    <div className="dashboard-home-options" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '100%', gap: '12px', padding: '40px 0', fontFamily: Typography.principal }}>
       {opciones.map((opcion, index) => (
         <button
           key={index}

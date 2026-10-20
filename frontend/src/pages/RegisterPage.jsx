@@ -108,18 +108,18 @@ function RegisterPage() {
 
     return (
         <Layout>
-            <div style={{ backgroundColor: '#cccccc', minHeight: 'calc(100vh - 150px)', display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '40px 0' }}>
-                <div style={{ display: 'flex', width: '750px', height: '600px', backgroundColor: 'white', borderRadius: '15px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.3)', position: 'relative', zIndex: 10 }}>
+            <div className="register-page-content" style={{ backgroundColor: '#cccccc', minHeight: 'calc(100vh - 150px)', display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '40px 0' }}>
+                <div className="register-card" style={{ display: 'flex', width: '750px', height: '600px', backgroundColor: 'white', borderRadius: '15px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.3)', position: 'relative', zIndex: 10 }}>
 
                     {/* Panel Azul Izquierdo */}
-                    <div style={{ flex: '0 0 350px', backgroundColor: '#213c7a', color: 'white', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '40px', textAlign: 'center' }}>
+                    <div className="register-welcome" style={{ flex: '0 0 350px', backgroundColor: '#213c7a', color: 'white', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '40px', textAlign: 'center' }}>
                         <h1 style={{ fontSize: '2.2rem', marginBottom: '25px' }}>REGISTRO</h1>
                         <p style={{ fontSize: '0.9rem' }}>Crea una nueva cuenta para acceder al sistema de consulta de estadísticas.</p>
                         <img src={`${process.env.PUBLIC_URL}/assets/TESJo_ Blanco.png`} alt="Logo TESJo" style={{ width: '150px', marginTop: '20px' }} />
                     </div>
 
                     {/* Panel Derecho con Scroll */}
-                    <div style={{ flex: '1', padding: '40px', overflowY: 'auto', background: 'white' }}>
+                    <div className="register-form-panel" style={{ flex: '1', padding: '40px', overflowY: 'auto', background: 'white' }}>
                         <h3 style={{ color: '#213c7a', borderBottom: '2px solid #eee', paddingBottom: '10px', marginBottom: '20px', textAlign: 'center' }}>Registro de Nuevo Usuario</h3>
 
                         {error && <div style={{ color: 'red', textAlign: 'center', marginBottom: '15px' }}>{error}</div>}
