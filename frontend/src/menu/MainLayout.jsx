@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import { Colors, Assets, Typography } from '../components/generalStyle/StylesConfig';
 import ChatIA from '../components/generalStyle/ChatIA';
+import { useAuth } from '../context/AuthContext';
 
 const MainLayout = () => {
     const navigate = useNavigate();
     const location = useLocation();
+    const { logout } = useAuth();
     const [showMenu, setShowMenu] = useState(false);
     const [showDownloads, setShowDownloads] = useState(false);
     const [showChatIA, setShowChatIA] = useState(false);
@@ -27,6 +29,11 @@ const MainLayout = () => {
         } else {
             alert("🤖 Lo siento, Cris. Aún estoy aprendiendo a buscar ese formato.");
         }
+    };
+
+    const handleLogout = async () => {
+        await logout();
+        navigate('/');
     };
 
     return (
@@ -122,7 +129,7 @@ const MainLayout = () => {
                                     Cristian Bautista
                                 </strong>
                                 <button style={menuOptionStyle}>⚙️ Configuración</button>
-                                <button onClick={() => navigate('/')} style={{ ...menuOptionStyle, color: 'red' }}>↪️ Cerrar Sesión</button>
+                                <button onClick={handleLogout} style={{ ...menuOptionStyle, color: 'red' }}>↪️ Cerrar Sesión</button>
                             </div>
                         )}
                     </div>

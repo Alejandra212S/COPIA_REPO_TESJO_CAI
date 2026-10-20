@@ -1,6 +1,12 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { auth, db } from '../api/firebaseConfig';
-import { createUserWithEmailAndPassword, onAuthStateChanged, updateProfile } from 'firebase/auth';
+import {
+    createUserWithEmailAndPassword,
+    onAuthStateChanged,
+    signInWithEmailAndPassword,
+    signOut,
+    updateProfile
+} from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
 
 const AuthContext = createContext();
@@ -67,14 +73,29 @@ export const AuthProvider = ({ children }) => {
     };
 
     const login = async (credentials) => {
-        // Manejado en LoginForm
+        try {
+            return await signInWithEmailAndPassword(auth, credentials.email, credentials.password);
+        } catch (error) {
+            if (error.code === 'auth/invalid-credential' || error.code === 'auth/wrong-password' || error.code === 'auth/user-not-found') {
+                throw new Error('Correo o contraseña incorrectos.');
+            }
+            if (error.code === 'auth/invalid-email') {
+                throw new Error('El correo electrónico no es válido.');
+            }
+            throw error;
+        }
     };
+
+    const logout = () => signOut(auth);
 
     const value = {
         user,
         loading,
+        isLoading: loading,
+        isAuthenticated: Boolean(user),
         register,
         login,
+        logout,
     };
 
     return (

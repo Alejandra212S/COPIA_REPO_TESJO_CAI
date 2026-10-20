@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Assets } from './generalStyle/StylesConfig';
 // Integración: Importación del servicio de Microsoft
 import { loginWithMicrosoft } from '../api/firebaseService';
@@ -78,7 +78,7 @@ const LoginForm = () => {
                             <div className="input-group">
                                 <label htmlFor="email">Usuario</label>
                                 <input
-                                    type="text"
+                                    type="email"
                                     id="email"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
@@ -122,7 +122,7 @@ const LoginForm = () => {
 
                             <p className="register-link">
                                 ¿Aún no tienes cuenta?
-                                <a href="/register"> Regístrate</a>
+                                <Link to="/register"> Regístrate</Link>
                             </p>
                         </form>
                     </div>
