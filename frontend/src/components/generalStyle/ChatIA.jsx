@@ -14,6 +14,7 @@ const ChatIA = ({ onClose, onQuery }) => {
     // ... dentro de ChatIA.jsx
     return (
         <div
+            className="responsive-chat"
             style={styles.chatContainer}
             onClick={(e) => e.stopPropagation()} // 👈 ESTA ES LA CLAVE
         >

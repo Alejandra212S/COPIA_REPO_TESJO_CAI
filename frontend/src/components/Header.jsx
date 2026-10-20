@@ -26,7 +26,7 @@ const Header = () => {
     };
 
     return (
-        <header style={{ position: 'relative', width: '100%', zIndex: 1000 }}>
+        <header className="site-header" style={{ position: 'relative', width: '100%', zIndex: 1000 }}>
             <img
                 src={Assets.header}
                 alt="Fondo Institucional"
@@ -34,6 +34,7 @@ const Header = () => {
             />
 
             <div
+                className="site-header-actions"
                 style={{
                     position: 'absolute',
                     top: '50%',
