@@ -3,19 +3,14 @@
 
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-
-// Importa las imágenes o define las rutas de las imágenes aquí
-// ASUME que las imágenes están en frontend/public o se importan.
-const HEADER_IMG_SRC = "/header-bg.png"; // Reemplaza con tu ruta
-const FOOTER_IMG_SRC = "/footer-bg.png"; // Reemplaza con tu ruta
-const LOGO_IMG_SRC = "/tesjo-logo.png";   // Reemplaza con tu ruta
+import { Assets } from './generalStyle/StylesConfig';
 
 const AuthLayout = () => {
   return (
     <div className="app-container">
       {/* --- ENCABEZADO --- */}
       <header className="top-bar">
-        <img src={HEADER_IMG_SRC} alt="Encabezado TESJO" className="encabezado-img" />
+        <img src={Assets.header} alt="Encabezado TESJO" className="encabezado-img" />
       </header>
 
       {/* --- CONTENIDO CENTRAL (Donde se renderiza LoginForm o RegisterForm) --- */}
@@ -30,7 +25,7 @@ const AuthLayout = () => {
                 <p className="sicei-text">
                     Sistema de Consulta de Estadísticas Institucionales
                 </p>
-                <img src={LOGO_IMG_SRC} alt="Logo TESJO" className="logo-img" />
+                <img src={`${process.env.PUBLIC_URL}/assets/TESJo_ Blanco.png`} alt="Logo TESJO" className="logo-img" />
             </div>
 
             {/* Renderiza el Formulario (Login o Registro) */}
@@ -45,7 +40,7 @@ const AuthLayout = () => {
         <div className="copyright-text">
             © Copyright 2025 TecNM - Todos los Derechos Reservados
         </div>
-        <img src={FOOTER_IMG_SRC} alt="Pie de Página TESJO" className="footer-img" />
+        <img src={Assets.footer} alt="Pie de Página TESJO" className="footer-img" />
       </footer>
     </div>
   );

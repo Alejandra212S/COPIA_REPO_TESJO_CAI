@@ -13,8 +13,8 @@ export const Colors = {
 
 // --- ACTIVOS (IMÁGENES E ICONOS UNIFICADOS) ---
 export const Assets = {
-    header: '/assets/header-bg.png',
-    footer: '/assets/pagg.png',
+    header: `${process.env.PUBLIC_URL}/assets/header-bg.png`,
+    footer: `${process.env.PUBLIC_URL}/assets/pagg.png`,
     avatarDefault: 'https://img.icons8.com/?size=100&id=povlgAcqxwW6&format=png&color=000000',
     iconIA: 'https://img.icons8.com/m_outlined/512/FFFFFF/artificial-intelligence.png',
 

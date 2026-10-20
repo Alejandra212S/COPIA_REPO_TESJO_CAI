@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import { Assets } from './generalStyle/StylesConfig';
 // Integración: Importación del servicio de Microsoft
 import { loginWithMicrosoft } from '../api/firebaseService';
 
@@ -53,7 +54,7 @@ const LoginForm = () => {
     return (
         <div className="login-page">
             <div className="top-bar">
-                <img src="/assets/header-bg.png" alt="Encabezado TESJO" className="encabezado-img" />
+                <img src={Assets.header} alt="Encabezado TESJO" className="encabezado-img" />
             </div>
 
             <div className="main-content-area">
@@ -67,7 +68,7 @@ const LoginForm = () => {
                         <p className="sicei-text">
                             Sistema de Consulta de Estadísticas Institucionales
                         </p>
-                        <img src="/assets/TESJo_ Blanco.png" alt="Logo TESJO" className="logo-img" />
+                        <img src={`${process.env.PUBLIC_URL}/assets/TESJo_ Blanco.png`} alt="Logo TESJO" className="logo-img" />
                     </div>
 
                     <div className="login-form-panel">
@@ -132,7 +133,7 @@ const LoginForm = () => {
                 <p className="copyright-text">
                     © Copyright 2025 TecNM - Todos los Derechos Reservados
                 </p>
-                <img src="/assets/pagg.png" alt="Logo Pie de Página" className="footer-img" />
+                <img src={Assets.footer} alt="Logo Pie de Página" className="footer-img" />
             </div>
 
             <style jsx="true">{`

@@ -6,7 +6,7 @@ import Header from './Header';              // ✅ Encabezado general
 import Footer from './Footer';              // ✅ Pie de página
 
 // Puedes definir aquí rutas de imágenes globales si las usa tu Header/Footer
-const LOGO_IMG_SRC = "/assets/tesjo-logo.png";
+const LOGO_IMG_SRC = `${process.env.PUBLIC_URL}/assets/tesjo-logo.png`;
 
 /**
  * Componente Layout general.

@@ -115,7 +115,7 @@ function RegisterPage() {
                     <div style={{ flex: '0 0 350px', backgroundColor: '#213c7a', color: 'white', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '40px', textAlign: 'center' }}>
                         <h1 style={{ fontSize: '2.2rem', marginBottom: '25px' }}>REGISTRO</h1>
                         <p style={{ fontSize: '0.9rem' }}>Crea una nueva cuenta para acceder al sistema de consulta de estadísticas.</p>
-                        <img src="/assets/TESJo_ Blanco.png" alt="Logo TESJo" style={{ width: '150px', marginTop: '20px' }} />
+                        <img src={`${process.env.PUBLIC_URL}/assets/TESJo_ Blanco.png`} alt="Logo TESJo" style={{ width: '150px', marginTop: '20px' }} />
                     </div>
 
                     {/* Panel Derecho con Scroll */}

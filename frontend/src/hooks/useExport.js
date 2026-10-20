@@ -69,7 +69,7 @@ const useExport = () => {
     const worksheet = workbook.addWorksheet('Evaluación');
 
     try {
-      const response = await fetch('/assets/logo_tesjo.jpg');
+      const response = await fetch(`${process.env.PUBLIC_URL}/assets/logo_tesjo.jpg`);
       const blob = await response.blob();
       const arrayBuffer = await blob.arrayBuffer();
       const logoId = workbook.addImage({

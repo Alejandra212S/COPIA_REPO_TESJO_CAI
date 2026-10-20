@@ -13,7 +13,7 @@ const LoginPage = () => {
             alignItems: 'center',
             justifyContent: 'center',
             // Usamos la imagen de fondo:
-            backgroundImage: 'url(/assets/enkabezado.jpg)',
+            backgroundImage: `url(${process.env.PUBLIC_URL}/assets/header-bg.png)`,
             backgroundSize: 'cover', // Cubre todo el fondo
             backgroundPosition: 'center top', // Centra la imagen y la alinea arriba
             padding: '20px'

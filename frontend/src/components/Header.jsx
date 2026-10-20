@@ -3,8 +3,6 @@ import { auth } from '../api/firebaseConfig';
 import { useAuth } from '../context/AuthContext';
 import { Assets } from './generalStyle/StylesConfig';
 
-const HEADER_IMG_SRC = "/assets/header-bg.png";
-
 const Header = () => {
     const { user: globalUser } = useAuth();
     const [showMenu, setShowMenu] = useState(false);
@@ -30,7 +28,7 @@ const Header = () => {
     return (
         <header style={{ position: 'relative', width: '100%', zIndex: 1000 }}>
             <img
-                src={HEADER_IMG_SRC}
+                src={Assets.header}
                 alt="Fondo Institucional"
                 style={{ width: '100%', display: 'block' }}
             />
