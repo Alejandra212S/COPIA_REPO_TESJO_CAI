@@ -72,7 +72,7 @@ const DashboardHome = () => {
 function App() {
   return (
     <AuthProvider>
-      <Router>
+      <Router basename="/COPIA_REPO_TESJO_CAI">
         <style dangerouslySetInnerHTML={{
           __html: `
               html, body, #root { margin: 0; padding: 0; width: 100vw; height: 100vh; overflow-x: hidden; font-family: ${Typography.principal}; background-color: ${Colors.fondoGris}; }
